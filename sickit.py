@@ -1,4 +1,4 @@
-1)
+1) "List contain sublist"
 a=list(input("Enter the list values:").split())
 b=list(input("Enter the Sublist values:").split())
 if all(element in a for element in b):
@@ -7,7 +7,7 @@ else:
  print("The sublist is not present in the list")
 
 
-2)
+2) "Dic values with average"
 marks=[{"m1":90,"m2":50},{"m1":50,"m2":43},
 {"m1":95,"m2":100}]
 for mark in marks:
@@ -15,7 +15,7 @@ for mark in marks:
  print(mark) 
 
 
-3)
+3) "Tuple manipulation"
 a=(10,20,30)
 print("Tuple ",a)
 print("Type:",type(a))
@@ -29,7 +29,7 @@ d=[1,2,3,4]
 d=tuple(d)
 print("Type Conversion",d)
 
-4)
+4) "Pow of an arr values element-wise"
 import numpy as np
 import pandas as pd
 base=np.array([1,2,3])
@@ -38,7 +38,7 @@ res=np.power(base,exp)
 mat=pd.DataFrame({"Base":base,"Exponent":exp,"Resule":res})
 print(mat)
 
-5)
+5) "string pangram"
 sentence = 'The five boxing wizards jump quickly'
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 flag = True
@@ -51,7 +51,7 @@ if flag:
 else:
  print("No, It is not a Pangram")
 
-6)
+6) "k-fold cross validation"
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import KFold, cross_val_score
@@ -65,7 +65,7 @@ print("Number of CV Scores used in Average:",
 len(scores)) 
 
 
-7)
+7) "CSV"
 import csv
 file=open('data.csv','r')
 reader=csv.reader(file)
@@ -73,7 +73,7 @@ for row in reader:
  print(row) 
 
 
-Program 8: (excel columns sno,customer name,age,annual score,spending score)
+Program 8: (excel columns sno,customer name,age,annual score,spending score) "K-means Algorithm"
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
@@ -89,7 +89,7 @@ plt.title("Clusters of Customers"); plt.xlabel("Annual Income (k$)"); plt.ylabel
 plt.legend(); plt.show()
 
 
-PROGRAM-9 :
+PROGRAM-9 : "Naive Bayes Algorithm"
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
@@ -104,7 +104,7 @@ accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy: {:.2f}%".format(accuracy * 100))
 
 
-PROGRAM-10 :
+PROGRAM-10 : "Logistic Regression"
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -146,7 +146,7 @@ plt.title('Decision boundary')
 plt.show()
 
 
-PROGRAM-11 :
+PROGRAM-11 : "Stacked Generlization"
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -177,7 +177,7 @@ print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
 
-PROGRAM-12 :
+PROGRAM-12 : "support vector Machine"
 from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 from sklearn.svm import SVC
