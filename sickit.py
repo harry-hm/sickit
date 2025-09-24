@@ -32,37 +32,29 @@ print("Type Conversion",d)
 4)
 import numpy as np
 import pandas as pd
-arr1=np.array([[1,2,3],[4,5,6]])
-arr2=np.array([[1,2,3],[4,5,6]])
-result_numpy=np.power(arr1,arr2)
-print("Numpy Power Result")
-print(result_numpy)
-print("Numpy ** Operator Result")
-print(arr1**arr2)
-Series1=pd.Series(arr1.flatten())
-Series2=pd.Series(arr2.flatten())
-result_pandas=Series1.pow(Series2)
-print("Pandas Power Result")
-print(result_pandas) 
-
+base=np.array([1,2,3])
+exp=np.array([1,2,3])
+res=np.power(base,exp)
+mat=pd.DataFrame({"Base":base,"Exponent":exp,"Resule":res})
+print(mat)
 
 5)
-import string
 sentence = 'The five boxing wizards jump quickly'
-def ispanagram(s):
- alphabet = set(string.ascii_lowercase)
- return alphabet <= set(s.lower())
-if ispanagram(sentence):
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+flag = True
+for ch in alphabet:
+ if ch not in sentence.lower():
+  flag = False
+  break
+if flag:
  print("Yes, It is a Pangram")
 else:
  print("No, It is not a Pangram")
 
-
 6)
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import KFold,
-cross_val_score
+from sklearn.model_selection import KFold, cross_val_score
 X, y = datasets.load_iris(return_X_y=True)
 clf = DecisionTreeClassifier(random_state=42)
 k_folds = KFold(n_splits=5)
@@ -97,15 +89,19 @@ plt.title("Clusters of Customers"); plt.xlabel("Annual Income (k$)"); plt.ylabel
 plt.legend(); plt.show()
 
 
-
 PROGRAM-9 :
-import numpy as np from sklearn.model_selection import train_test_split from sklearn.naive_bayes
-import GaussianNB from sklearn.metrics import accuracy_score
-x=np.array([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11]])
-y=np.array([0,0,0,0,0,1,1,1,1,1])
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=42)
-model=GaussianNB() model.fit(x_train,y_train) y_pred=model.predict(x_test)
-accuracy=accuracy_score(y_test,y_pred) print("Accuracy: {:.2f}%".format(accuracy*100))
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score
+x = np.array([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,10],[10,11]])
+y = np.array([0,0,0,0,0,1,1,1,1,1])
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
+model = GaussianNB()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy: {:.2f}%".format(accuracy * 100))
 
 
 PROGRAM-10 :
@@ -196,7 +192,7 @@ plt.show()
 clf = SVC(kernel='linear')
 x = pd.read_csv("path/to/cancer.csv")
 if 'malignant' in x.columns and 'benign' in x.columns:
- y = x.iloc[:, 30].
+ y = x.iloc[:, 30].values
  x_features = np.column_stack((x['malignant'], x['benign']))
  clf.fit(x_features, y)
  prediction1 = clf.predict([[120, 990]])
