@@ -12,7 +12,7 @@ marks=[{"m1":90,"m2":50},{"m1":50,"m2":43},
 {"m1":95,"m2":100}]
 for mark in marks:
  mark["average"]=(mark["m1"]+mark["m2"])/2
-print(marks) 
+ print(mark) 
 
 
 3)
