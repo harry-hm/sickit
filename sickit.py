@@ -1,3 +1,8 @@
+pip install pandas
+pip install numpy
+pip install matplotlib
+pip install scikit-learn
+
 1) "List contain sublist"
 a=list(input("Enter the list values:").split())
 b=list(input("Enter the Sublist values:").split())
